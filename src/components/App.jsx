@@ -1,5 +1,8 @@
 import React from 'react';
-import { Profile } from './Profile';
+import user from './profile/Profile';
+import Profile from './profile/Profile';
+import { Statistics } from './statistics/Statistics';
+import { statisticData } from './statistics/Statistics';
 
 export function App() {
   return (
@@ -11,6 +14,7 @@ export function App() {
         avatar={user.avatar}
         stats={user.stats}
       />
+      <Statistics title="Upload stats" stats={statisticData} />
     </div>
   );
 }
