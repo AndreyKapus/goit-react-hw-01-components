@@ -23,7 +23,7 @@ export const Statistics = ({ title, stats }) => {
       <Title>Upload stats</Title>
       <StatsList>
         {stats.map(stat => (
-          <Items key={statisticData.id}>
+          <Items key={stat.id}>
             <Label>{stat.label}</Label>
             <Parcentage>{stat.percentage}%</Parcentage>
           </Items>
@@ -34,6 +34,5 @@ export const Statistics = ({ title, stats }) => {
 };
 
 Statistics.propTypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+  stats: PropTypes.array.isRequired,
 };

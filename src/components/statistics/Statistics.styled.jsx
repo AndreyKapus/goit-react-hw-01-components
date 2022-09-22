@@ -2,6 +2,10 @@ import styled from '@emotion/styled';
 
 export const Container = styled.section`
   width: 500px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 `;
 
 export const Title = styled.h2`
@@ -16,11 +20,14 @@ export const StatsList = styled.ul`
   justify-content: center;
   align-items: center;
   list-style: none;
+  margin-bottom: 0px;
 `;
 
 export const Items = styled.li`
-  padding: 20px;
+  width: 100px;
+  height: 100px;
   text-align: center;
+  border: 1px solid black;
 `;
 
 export const Label = styled.span`

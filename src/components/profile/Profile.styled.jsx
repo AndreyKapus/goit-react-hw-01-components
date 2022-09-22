@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  width: 500px;
+  width: 300px;
   heigth: 500px;
   text-align: center;
-  background-color: Gainsboro;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
 `;
 
 export const Description = styled.div`
@@ -43,11 +45,13 @@ export const Stats = styled.ul`
   justify-content: center;
   align-items: center;
   list-style: none;
+  margin-bottom: 0px;
 `;
 
 export const StatsList = styled.li`
   padding: 20px;
   border: 1px solid black;
+  background-color: Gainsboro;
   width: 60px;
   height: 60px;
   text-align: center;
