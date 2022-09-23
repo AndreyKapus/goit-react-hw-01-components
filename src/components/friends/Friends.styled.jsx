@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-import { buildQueries } from '@testing-library/react';
-import { friends } from './Friends';
 
 export const FriendsList = styled.ul`
   list-style: none;
