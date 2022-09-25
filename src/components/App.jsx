@@ -1,12 +1,13 @@
 import React from 'react';
-import user from './profile/Profile';
+
 import Profile from './profile/Profile';
 import { Statistics } from './statistics/Statistics';
-import { statisticData } from './statistics/Statistics';
 import { FriendList } from './friends/Friends';
-import { friends } from './friends/Friends';
 import { TransactionHistory } from './Transaction/TransactionHistory';
-import { transactions } from './Transaction/TransactionHistory';
+import user from '../data.json/user.json';
+import friends from '../data.json/friends.json';
+import statistics from '../data.json/data.json';
+import transactions from '../data.json/transactions.json';
 
 export function App() {
   return (
@@ -18,7 +19,7 @@ export function App() {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Statistics title="Upload stats" stats={statisticData} />
+      <Statistics title="Upload stats" stats={statistics} />
       <FriendList friends={friends} />;
       <TransactionHistory items={transactions} />;
     </div>

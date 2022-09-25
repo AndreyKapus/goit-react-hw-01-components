@@ -1,55 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FriendsList, Item, Status, Avater, Name } from './Friends.styled';
-
-export const friends = [
-  {
-    avatar: 'https://cdn-icons-png.flaticon.com/512/1998/1998592.png',
-    name: 'Mango',
-    isOnline: true,
-    id: 1812,
-  },
-  {
-    avatar: 'https://cdn-icons-png.flaticon.com/512/616/616438.png',
-    name: 'Kiwi',
-    isOnline: false,
-    id: 1137,
-  },
-  {
-    avatar: 'https://cdn-icons-png.flaticon.com/512/1623/1623681.png',
-    name: 'Ajax',
-    isOnline: true,
-    id: 1213,
-  },
-  {
-    avatar: 'https://cdn-icons-png.flaticon.com/512/2977/2977285.png',
-    name: 'Jay',
-    isOnline: true,
-    id: 1714,
-  },
-  {
-    avatar: 'https://cdn-icons-png.flaticon.com/512/1998/1998749.png',
-    name: 'Poly',
-    isOnline: false,
-    id: 1284,
-  },
-];
+import { FriendListItem } from './friendListItem';
+import { FriendsList } from './Friends.styled';
 
 export const FriendList = ({ friends }) => {
   return (
     <FriendsList>
-      {' '}
-      {friends.map(friend => (
-        <Item key={friend.id}>
-          <Status isOnline={friend.isOnline}>{friend.isOnline}</Status>
-          <Avater src={friend.avatar} alt="User avatar" width="48" />
-          <Name>{friend.name}</Name>
-        </Item>
-      ))}
+      {friends.map(({ avatar, name, isOnline, id }) => {
+        return (
+          <FriendListItem
+            key={id}
+            avatar={avatar}
+            name={name}
+            isOnline={isOnline}
+          />
+        );
+      })}
     </FriendsList>
   );
 };
 
-FriendList.protoTypes = {
-  fiends: PropTypes.array.isRequired,
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.exact({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
 };
